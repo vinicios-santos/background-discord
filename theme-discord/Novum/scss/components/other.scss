@@ -1,0 +1,288 @@
+@use "../core/mixins" as m;
+
+//various popouts
+[id^="popout"] > div > {
+  [class^="container"],
+  [class^="popout"] {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+//unsaved changes popout
+[class^="noticeRegion"] > [class^="container"] {
+  background: rgba(0, 0, 0, 0.85) !important;
+  box-shadow: none !important;
+}
+
+//being invited to server modal
+[role="dialog"] [class^="contentWrapper"] {
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+//showing emoji details popout
+[class^="popoutContainer"] {
+  background: rgba(0, 0, 0, 0.95) !important;
+
+  button {
+    @include m.btred;
+  }
+}
+
+//problems with connection animated modal
+[class^="app-"] > [class*="fixClipping-"] {
+  background: linear-gradient(#00000022, #000000ff) !important;
+}
+
+//Krisp noice cancellation popout
+[class*="noiseCancellationPopout"] {
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+//Keyboard shortcuts modal
+[class*="keyboardShortcutsModal"] {
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+//Where would u like to go? popout aka quickswitcher component
+[class^="quickswitcher"] {
+  height: 100% !important;
+  box-shadow: none !important;
+}
+[class^="quickswitcher"] input {
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+//Random-located focus-locking popouts
+[class*="focusLock"] [class*="root"] {
+  background: rgba(0, 0, 0, 0.95) !important;
+  box-shadow: none !important;
+
+  [class*="directionRow"],
+  [class*="body"],
+  [class*="topSection"] {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+
+  [class*="avatar"] {
+    border: none;
+  }
+
+  [class*="message"] {
+    background: transparent !important;
+    border: none !important;
+  }
+}
+
+//live indicator in server channel/Active Now section in home screen
+[class^="live-"][class*="textBadge"] {
+  background: var(--main-color-selected) !important;
+  color: var(--button-text) !important;
+}
+
+//notice at the top of the screen (i.e. when u didnt complete steps before talking on server)
+div[class^="notice"] {
+  color: var(--button-text) !important;
+  background: var(--main-color-semitransparent);
+  button {
+    color: var(--button-text) !important;
+    background: var(--main-color-semitransparent) !important;
+
+    &:hover {
+      color: var(--button-text-selected) !important;
+      background: var(--main-color-semitransparent-selected) !important;
+    }
+  }
+}
+
+//"Invite People" button after clicking on some server/channel/servername with right click
+#guild-context-invite-people:not(:hover),
+#channel-context-invite-people:not(:hover),
+#guild-header-popout-invite-people:not(:hover) {
+  color: var(--accent-color);
+}
+
+//FlowerStar aka Verified SVG ICON
+[class^="flowerStar-"] > path {
+  fill: var(--accent-saturated) !important;
+}
+[class^="flowerStar-"] + [class^="child"] path {
+  fill: #ffffff !important;
+}
+
+//AKA badge
+[class^="akaBadge-"] {
+  background: var(--main-color) !important;
+  color: var(--button-text) !important;
+}
+
+//Rotate home icon
+[class*="homeIcon"] {
+  transform: rotate(-180deg);
+}
+
+//Home icon recolor
+[data-list-item-id="guildsnav___home"]:hover > div,
+[data-list-item-id="guildsnav___home"][class*="selected"] > div {
+  background: var(--main-color) !important;
+}
+
+//Remove discord support button from upper right corner
+[href='https://support.discord.com']
+{
+  display: none !important;
+}
+//Remove notification bell from upper right corner
+[class*="title"] > [class^="toolbar"] > [class*="icon"]:nth-child(2) {
+  display: none !important;
+}
+
+//Bot icon
+
+//bot icon on server user list
+[class*="nameAndDecorators"] {
+  //making it stick to the right
+  //justify-content: space-between;
+  [class*="botTagRegular"] {
+    transform: translateY(-2px);
+  }
+}
+//icon container
+[class*="botTagRegular"] {
+  background: transparent !important;
+  position: relative;
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+
+  //after clicking on bot profile - bot without custom nick
+  &:not([class*="WithNickname"]) {
+    top: 0px;
+    right: 0px;
+  }
+
+  //after clicking on bot profile - bot with custom nick
+  &[class*="WithNickname"] {
+    position: absolute;
+    transform: translateY(-4px);
+  }
+
+  //getting rid of "BOT" text
+  [class*="botText"] {
+    display: none;
+  }
+
+  //icon
+  &::after {
+    background: url(https://przemec.github.io/Novum/assets/icons/bot.svg) !important;
+    background-size: cover !important;
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.8;
+  }
+
+  //verified bot check icon
+  & > svg {
+    color: #fff;
+    transform: translate(18px, -5px);
+    z-index: 2;
+  }
+}
+
+//Cards in settings, servers discover page, etc.
+//[class*="justify"] - cards in keybinds and activity status settings
+[class*="card-"]:not([class*="justify"]) {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: #000000 !important;
+}
+[class*="card-"][class*="justify"] {
+  box-shadow: none;
+}
+
+[class*="mediaBarWrapper"] {
+  [class*="fakeEdges"] {
+    background: var(--main-color);
+
+    &::after,
+    &::before {
+      background: var(--main-color);
+    }
+  }
+
+  [class*="mediaBarProgress"] {
+    background: var(--main-color);
+
+    &::after,
+    &::before {
+      background: var(--main-color);
+    }
+
+    [class*="mediaBarGrabber"] {
+      background: var(--main-color);
+    }
+  }
+
+  [class*="bubble"] {
+    background: var(--main-color);
+  }
+}
+
+[class*="embedVideo"] {
+  [class*="playPausePop"] {
+    display: none !important;
+  }
+}
+
+[class*="streamPreviewWrapper"] [class*="streamPreview"] {
+  [class*="previewContainer"] {
+    background: transparent !important;
+    border: transparent;
+  }
+
+  background: rgba(0, 0, 0, 0.95) !important;
+  border: transparent;
+}
+
+//Replace discord wordmark with theme name
+[class*="wordmark"] {
+  svg {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    height: 16px;
+    line-height: 14px;
+  }
+  &::before {
+    content: "Novum";
+    margin-left: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    font-family: Whitney, "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+  }
+  &::after {
+    content: "v5.6.0";
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+}
+
+//Add novum icon into settings
+[class*="socialLinks"]::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  margin-left: 6px;
+  background: url(https://przemec.github.io/Novum/assets/images/NovumLogo.png) center/cover no-repeat;
+  filter: contrast(0%) brightness(1.4);
+}
