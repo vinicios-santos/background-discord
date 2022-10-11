@@ -1,0 +1,68 @@
+:root {
+  //Initialize theme variables
+  --app-background: url("https://imgur.com/0XbGlDB.png");
+  --main-color: #265828;
+  --main-color-selected: #2e6930;
+  --main-color-semitransparent: #081108;
+  --main-color-semitransparent-selected: #173518;
+  --accent-color: #449e48;
+  --accent-color-semitransparent: #0f2310;
+  --accent-saturated: #4caf50;
+  --accent-desaturated: #357a38;
+  --button-text: #dddddd;
+  --button-text-selected: #ffffff;
+  --profile-background: url("https://www.mmppicture.co.in/wp-content/uploads/2020/08/Blur-Background-14.jpg");
+  --profile-activity: #1e4620;
+  --scroll-thumb-color: #3d8c40;
+  --HSL-server-icon-size: 40px;
+  --HSL-server-spacing: 10px;
+  --home-button-position: center;
+}
+
+//Background
+body::after {
+  background-image: var(--app-background) !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: left top;
+  z-index: -90;
+}
+
+//Remove main gray background colors
+[class^="appMount-"],
+[class^="app-"],
+[class^="chat-"],
+[class^="bg-"] {
+  background: transparent !important;
+}
+
+//bar at the top of the app
+#app-mount>[class^="typeMacOS"],
+#app-mount>[class^="typeWindows"] {
+  height: 18px;
+  margin-top: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 4px;
+}
+
+[class^="chat-"]>[class^="content-"]>div {
+  background: transparent !important;
+}
+
+[class^="wrapper-"] {
+  border: none;
+}
+
+[class^="sidebar-"]>nav>div:first-child,
+[class^="base-"]>[class^="content-"]>div:nth-child(2) section[class*="container-"] {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
