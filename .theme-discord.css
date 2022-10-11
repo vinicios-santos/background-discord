@@ -143,20 +143,23 @@
 }
 
 :root {
-    --app-background: url("https://przemec.github.io/Novum/assets/images/app.png");
-    --main-color: #992727;
-    --main-color-selected: #aa2f2f;
-    --main-color-semitransparent: #d4393926;
-    --main-color-semitransparent-selected: #d336364d;
-    --accent-color: #fd9fa0;
-    --accent-color-semitransparent: #fca7a918;
-    --accent-saturated: #fd7a7c;
-    --accent-desaturated: #b47a7a;
+    --app-background: url("https://imgur.com/0XbGlDB.png");
+    --main-color: #265828;
+    --main-color-selected: #2e6930;
+    --main-color-semitransparent: #081108;
+    --main-color-semitransparent-selected: #173518;
+    --accent-color: #449e48;
+    --accent-color-semitransparent: #0f2310;
+    --accent-saturated: #4caf50;
+    --accent-desaturated: #357a38;
     --button-text: #dddddd;
     --button-text-selected: #ffffff;
-    --profile-background: url("https://przemec.github.io/Novum/assets/images/profile.png");
-    --profile-activity: #6d1515;
-    --scroll-thumb-color: #a54b4b;
+    --profile-background: url("https://www.mmppicture.co.in/wp-content/uploads/2020/08/Blur-Background-14.jpg");
+    --profile-activity: #1e4620;
+    --scroll-thumb-color: #3d8c40;
+    --HSL-server-icon-size: 40px;
+    --HSL-server-spacing: 10px;
+    --home-button-position: center;
 }
 
 body::after {
